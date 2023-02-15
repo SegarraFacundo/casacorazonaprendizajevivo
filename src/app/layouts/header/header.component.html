@@ -1,4 +1,11 @@
-<header aria-label="Site Header" class="bg-primary-light dark:bg-gray-900">
+<header aria-label="Site Header" class="bg-primary-light dark:bg-gray-900" 
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="md:flex md:items-center md:gap-12">
@@ -20,14 +27,14 @@
 
             <li>
               <a class="text-primary transition hover:text-primary/75 dark:text-white dark:hover:text-white/75"
-                [routerLink]="['/propuestas']">
+                [routerLink] = "['/']" fragment="queOfrecemos">
                 Propuestas
               </a>
             </li>
 
             <li>
               <a class="text-primary transition hover:text-primary/75 dark:text-white dark:hover:text-white/75"
-                [routerLink]="['/contacto']">
+              [routerLink] = "['/']" fragment="contactanos">
                 Contactanos
               </a>
             </li>
@@ -76,9 +83,9 @@
 
                   <nav
                     class="flex flex-col divide-y divide-gray-200 border-t border-b border-gray-200 text-sm font-medium text-gray-500">
-                    <a href="/" class="px-6 py-3"> Inicio </a>
-                    <a class="px-6 py-3" (click)="irA('/propuestas')"> Propuestas </a>
-                    <a class="px-6 py-3" (click)="irA('/contacto')"> Contactanos</a>
+                    <a class="px-6 py-3" [routerLink] = "['/']" (click)="menuService.verMenuLateral = false;" > Inicio </a>
+                    <a class="px-6 py-3" [routerLink] = "['/']" fragment="queOfrecemos" (click)="menuService.verMenuLateral = false;"> Propuestas </a>
+                    <a class="px-6 py-3" [routerLink] = "['/']" fragment="contactanos" (click)="menuService.verMenuLateral = false;"> Contactanos</a>
                     <a class="px-6 py-3" (click)="irA('/donar')"> Donar </a>
                   </nav>
                 </div>
