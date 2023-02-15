@@ -1,0 +1,45 @@
+<section class="relative bg-[url('assets/images/bg-banner.jpg')] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 bg-white/50 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-transparent">
+  </div>
+
+  <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <div class="max-w-xl text-center sm:text-left">
+      <h1 class="text-3xl font-knewave-regular sm:text-5xl text-secondary">
+        ¡Bienvenidos a Casa Corazón!
+      </h1>
+
+      <p class="mt-4 max-w-lg text-gray-800 sm:text-xl sm:leading-relaxed">
+        Espacio educativo no formal que se basa y fundamenta en los pilares de la educación libre que entiende a la
+        niñez y el aprendizaje como un proceso vital vinculado al juego y la exploración como modo de desarrollo de la
+        persona desde sí misma y en relación al entorno y la interacción con los demás.
+      </p>
+      <p class="mt-4 max-w-lg text-gray-800 sm:text-xl sm:leading-relaxed">
+        Para lo cual de desarrollan distintas actividades según sus necesidades, intereses y potencialidades desde una
+        dinámica integrativa y holística.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4 text-center">
+
+        <a href="https://forms.gle/sNHDumw4WdY2e7Nj6" target="_blank"
+          class="inline-block px-5 py-2 mr-2 text-sm font-medium text-white transition bg-secondary rounded hover:shadow focus:outline-none focus:ring">
+          Inscribirse
+        </a>
+
+        <a [routerLink]="['/detalle-3']"
+          class="inline-block px-5 py-2 mr-5 text-sm font-medium text-secondary transition bg-white border border-gray-400 rounded hover:shadow focus:outline-none focus:ring">
+          Saber más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Back to top button -->
+<button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
+  class="inline-block p-3 bg-primary text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-primary-light hover:text-secondary hover:shadow-lg focus:bg-primary-light focus:text-secondary focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-light active:text-secondary active:shadow-lg transition duration-150 ease-in-out hidden bottom-5 right-5 fixed"
+  #btnBackToTop (click)="scrollToTop()">
+  <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-4 h-4" role="img"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path fill="currentColor"
+      d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z">
+    </path>
+  </svg>
+</button>

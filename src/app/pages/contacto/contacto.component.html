@@ -1,0 +1,66 @@
+<section class="bg-gray-100" id="contactanos">
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg mb-8 text-center">
+      <h1 class="text-2xl font-knewave-regular text-primary sm:text-3xl">Contactanos</h1>
+
+      <p class="mt-4 text-gray-500">
+        Puedes hacer tu consulta o enviarnos tus dudas a Casa Corazón por el siguiente formulario. Esperamos tu
+        mensaje...
+      </p>
+    </div>
+
+    <div class="rounded-lg bg-white mx-auto max-w-lg p-8 shadow-lg lg:col-span-3 lg:p-12">
+      <form [formGroup]="formData" class="space-y-4">
+        <div>
+          <label class="sr-only" for="name">Nombre *</label>
+          <input class="w-full rounded-lg border-gray-200 p-3 text-sm" formControlName="name" placeholder="Nombre *"
+            type="text" id="name" />
+          <span *ngIf="(formData.get('name')?.dirty || formData.get('name')?.touched) && formData.get('name')?.errors?.['required']" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+            Nombre es requerido!
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label class="sr-only" for="email">Email *</label>
+            <input class="w-full rounded-lg border-gray-200 p-3 text-sm" formControlName="email" placeholder="Email *"
+              type="email" id="email" />
+              <span *ngIf="(formData.get('email')?.dirty || formData.get('email')?.touched) && formData.get('email')?.errors?.['required']" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                Email es requerido!
+              </span>
+              <span *ngIf="(formData.get('email')?.dirty || formData.get('email')?.touched) && formData.get('email')?.errors?.['email']" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                El email ingresado no es email valido!
+              </span>
+          </div>
+
+          <div>
+            <label class="sr-only" for="phone">Teléfono</label>
+            <input class="w-full rounded-lg border-gray-200 p-3 text-sm" formControlName="phone" placeholder="Teléfono"
+              type="tel" id="phone" />
+          </div>
+        </div>
+
+        <div>
+          <label class="sr-only" for="message">Mensaje *</label>
+          <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm" formControlName="message"
+            placeholder="Mensaje *" rows="8" id="message"></textarea>
+            <span *ngIf="(formData.get('message')?.dirty || formData.get('message')?.touched) && formData.get('message')?.errors?.['required']" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Mensajes requerido!
+            </span>
+        </div>
+
+        <div class="mt-4">
+          <button type="submit" (click)="onSubmit(formData.value)"
+            class="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto">
+            <span class="font-medium"> {{ cargando? 'Cargando...': 'Enviar'}} </span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" *ngIf="!cargando" class="ml-3 h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
